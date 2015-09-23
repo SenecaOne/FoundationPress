@@ -48,4 +48,13 @@ require_once( 'library/custom-nav.php' );
 /** Add protocol relative theme assets */
 require_once( 'library/protocol-relative-theme-assets.php' );
 
+/** General Site Functions */
+require_once( 'library/site-functions.php' );
+
+/** Customizer Functions */
+require_once( 'library/customizer.php' );
+
+/** GForms Functions */
+require_once( 'library/gforms-custom.php' );
+
 ?>

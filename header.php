@@ -17,12 +17,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/favicon.ico" type="image/x-icon">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-144x144-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-114x114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-72x72-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/icons/apple-touch-icon-precomposed.png">
 
 		<?php wp_head(); ?>
+		<?php $ga_ua = get_theme_mod( 'custom_ga_text' );
+			if ($ga_ua !== $default) { 
+		?>
+		<!-- asynchronous google analytics
+		change the UA-XXXXX-X to be your site's ID -->
+		<script>
+			ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+			ga('create','<?php echo $ga_ua; ?>','auto');ga('send','pageview')
+		</script>
+		<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+		<?php } ?>
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>

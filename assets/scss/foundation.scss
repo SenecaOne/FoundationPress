@@ -63,10 +63,11 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
-
+@import "site/theme-default";
 @import "site/global";
 @import "site/wp-admin";
 @import "site/topbar";
 @import "site/front";
 @import "site/featured";
 @import "site/footer";
+@import "site/media-queries";
